@@ -1,9 +1,5 @@
 #include "PlikZUzytkownikami.h"
 
-PlikZUzytkownikami::PlikZUzytkownikami()
-{
-    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
-}
 
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
@@ -101,8 +97,4 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     }
     return uzytkownik;
 }
-/*
-string pobierzNazwePliku()
-{
-    return nazwaPlikuZUzytkownikami;
-} */
+
