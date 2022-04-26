@@ -80,18 +80,18 @@ int UzytkownikMenedzer::logowanieUzytkownika(vector <Uzytkownik> &uzytkownicy)
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
     {
-        if (itr -> login == login)
+        if (itr -> pobierzLogin() == login)
         {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
                 haslo = MetodyPomocnicze::wczytajLinie();
 
-                if (itr -> haslo == haslo)
+                if (itr -> pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> id;
+                    return itr -> pobierzId();
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -113,9 +113,9 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(vector <Uzytkownik> 
 
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
-        if (itr -> id == idZalogowanegoUzytkownika)
+        if (itr -> pobierzId() == idZalogowanegoUzytkownika)
         {
-            itr -> haslo = noweHaslo;
+            itr -> pobierzHaslo() = noweHaslo;
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
         }
@@ -135,7 +135,7 @@ void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
     {
         for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
         {
-            liniaZDanymiUzytkownika = PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(*itr);
+            liniaZDanymiUzytkownika = plikZUzytkownikami.zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(*itr);
 
             if (itr == itrKoniec)
             {

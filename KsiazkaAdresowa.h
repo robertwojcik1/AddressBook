@@ -5,15 +5,14 @@
 
 #include "UzytkownikMenedzer.h"
 #include "MetodyPomocnicze.h"
-#include "AdresatMenedzer.h"
+
 
 using namespace std;
 
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
-    //AdresatMenedzer adresatMenedzer;
-    char wybierzOpcjeZMenuGlownego();
+
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami) {
@@ -21,6 +20,7 @@ public:
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    char wybierzOpcjeZMenuGlownego();
 };
 
 #endif

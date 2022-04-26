@@ -1,8 +1,6 @@
 #ifndef ADRESAT_H
 #define ADRESAT_H
 #include <iostream>
-#include "PlikZAdresatami.h"
-#include "AdresatMenedzer.h"
 
 using namespace std;
 
@@ -17,6 +15,7 @@ class Adresat
     string adres;
 
 public:
+    Adresat(int id = 0, int idUzytkownika = 0, string imie = "", string nazwisko = "", string numerTelefonu = "", string email = "", string adres = "");
     void ustawId(int noweId);
     void ustawIdUzytkownika(int noweIdUzytkownika);
     void ustawImie(string noweImie);

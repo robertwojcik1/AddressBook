@@ -1,21 +1,19 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
-#include "AdresatMenedzer.h"
-
 
 using namespace std;
 
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    AdresatMenedzer adresatMenedzer;
+    ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
-    int idZalogowanegoUzytkownika = 0;
+    //int idZalogowanegoUzytkownika = 0;
    // int idOstatniegoAdresata = 0;
    // int idUsunietegoAdresata = 0;
-    char wybor;
+   // char wybor;
 
-    uzytkownikMenedzer.wczytajUzytkownikowZPliku(uzytkownicy);
+   // uzytkownikMenedzer.wczytajUzytkownikowZPliku(uzytkownicy);
     /*
     while (true)
     {
