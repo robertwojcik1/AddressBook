@@ -23,7 +23,7 @@ KsiazkaAdresowa()
     <coordinates>
       <x>20</x>
       <y>150</y>
-      <w>130</w>
+      <w>180</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>Uzytkownik
@@ -36,7 +36,7 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
+      <x>220</x>
       <y>150</y>
       <w>550</w>
       <h>210</h>
@@ -54,16 +54,16 @@ KsiazkaAdresowa()
 - podajDaneNowegoUzytkownika(): Uzytkownik
 - pobierzIdNowegoUzytkownika(): Integer
 - czyIstniejeLogin(string login): bool
-- zapiszWszystkichUzytkownikowDoPliku(vector &lt;Uzytkownik&gt; &amp;uzytkownicy): void
+- zapiszWszystkichUzytkownikowDoPliku(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
+      <x>790</x>
       <y>150</y>
-      <w>720</w>
+      <w>590</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
@@ -71,10 +71,10 @@ KsiazkaAdresowa()
 - nazwaPlikuZUzytkownikami: String
 --
 + PlikZUzytkownikami()
-+ dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik): void
++ dopiszUzytkownikaDoPliku(): void
 + wczytajUzytkownikowZPliku(): vector
-- czyPlikJestPusty(fstream &amp;plikTekstowy): bool
-- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik): String</panel_attributes>
+- czyPlikJestPusty(): bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -87,8 +87,8 @@ KsiazkaAdresowa()
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
-+ konwerjsaIntNaString(int liczba): String
-+ konwersjaStringNaInt(string liczba): Integer
++ konwerjsaIntNaString(): String
++ konwersjaStringNaInt(): Integer
 + wczytajLinie(): String
 + wczytajZnak(): char</panel_attributes>
     <additional_attributes/>
@@ -98,7 +98,7 @@ KsiazkaAdresowa()
     <coordinates>
       <x>20</x>
       <y>400</y>
-      <w>220</w>
+      <w>180</w>
       <h>190</h>
     </coordinates>
     <panel_attributes>Adresat
@@ -116,9 +116,9 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
+      <x>220</x>
       <y>400</y>
-      <w>640</w>
+      <w>550</w>
       <h>190</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
@@ -127,34 +127,34 @@ KsiazkaAdresowa()
 - idOstatniegoAdresata: Integer
 - idUsunietegoAdresata: Integer
 --
-+ wyswietlWszystkichAdresatow(adresaci): void
-+ dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata): Integer
++ wyswietlWszystkichAdresatow(): void
++ dodajAdresata(): Integer
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku(): void
-- wyswietlDaneAdresata(Adresat adresat): void
-- podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata): Adresat
-- zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst): String</panel_attributes>
+- wyswietlDaneAdresata(): void
+- podajDaneNowegoAdresata(): Adresat
+- zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>600</y>
-      <w>880</w>
-      <h>200</h>
+      <x>790</x>
+      <y>400</y>
+      <w>590</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
 - nazwaPlikuZAdresatami: String
 --
-+ wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika):vector
-+ dopiszAdresataDoPliku(Adresat adresat): void
-- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): Integer
-- pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami): Adresat
-- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): Integer
-- pobierzLiczbe(string tekst, int pozycjaZnaku): String
-- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat): String
-- czyPlikJestPusty(fstream &amp;plikTekstowy): bool</panel_attributes>
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku():vector
++ dopiszAdresataDoPliku(): void
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): Integer
+- pobierzDaneAdresata(): Adresat
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
+- pobierzLiczbe(): String
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
+- czyPlikJestPusty(): bool</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

@@ -1,35 +1,34 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
+#include "UzytkownikMenedzer.h"
 
 using namespace std;
 
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
+    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    int idZalogowanegoUzytkownika = 0;
+    int idOstatniegoAdresata = 0;
+    int idUsunietegoAdresata = 0;
+    char wybor;
 
-    //int idZalogowanegoUzytkownika = 0;
-   // int idOstatniegoAdresata = 0;
-   // int idUsunietegoAdresata = 0;
-   // char wybor;
-
-   // uzytkownikMenedzer.wczytajUzytkownikowZPliku(uzytkownicy);
-    /*
     while (true)
     {
         if (idZalogowanegoUzytkownika == 0)
         {
-            wybor = KsiazkaAdresowa::ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
             switch (wybor)
             {
             case '1':
-                KsiazkaAdresowa::ksiazkaAdresowa.rejestracjaUzytkownika();
+                ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = UzytkownikMenedzer::uzytkownikMenedzer.logowanieUzytkownika(uzytkownicy);
+                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
                 break;
             case '9':
+                cout << "Koniec programu." << endl;
                 exit(0);
                 break;
             default:
@@ -38,6 +37,8 @@ int main()
                 break;
             }
         }
+    }
+      /*  }
         else
         {
 

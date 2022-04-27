@@ -69,7 +69,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
-int UzytkownikMenedzer::logowanieUzytkownika(vector <Uzytkownik> &uzytkownicy)
+int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
@@ -105,7 +105,7 @@ int UzytkownikMenedzer::logowanieUzytkownika(vector <Uzytkownik> &uzytkownicy)
     return 0;
 }
 
-void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(vector <Uzytkownik> &uzytkownicy, int idZalogowanegoUzytkownika)
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
@@ -120,10 +120,10 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(vector <Uzytkownik> 
             system("pause");
         }
     }
-    zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+    zapiszWszystkichUzytkownikowDoPliku();
 }
 
-void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy)
+void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";

@@ -27,3 +27,8 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 
     return wybor;
 }
+
+int KsiazkaAdresowa::logowanieUzytkownika()
+{
+    uzytkownikMenedzer.logowanieUzytkownika();
+}

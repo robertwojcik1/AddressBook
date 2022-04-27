@@ -2,7 +2,7 @@
 #define KSIAZKAADRESOWA_H
 
 #include <iostream>
-
+#include "Uzytkownik.h"
 #include "UzytkownikMenedzer.h"
 #include "MetodyPomocnicze.h"
 
@@ -13,7 +13,6 @@ class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
 
-
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami) {
     uzytkownikMenedzer.wczytajUzytkownikowZPliku();
@@ -21,6 +20,7 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     char wybierzOpcjeZMenuGlownego();
+    int logowanieUzytkownika();
 };
 
 #endif

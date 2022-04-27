@@ -8,6 +8,7 @@ void Adresat::ustawId(int noweId)
 
 void Adresat::ustawIdUzytkownika(int noweIdUzytkownika)
 {
+    if( noweIdUzytkownika >= 0)
     idUzytkownika = noweIdUzytkownika;
 }
 
