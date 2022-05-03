@@ -2,8 +2,8 @@
 #define KSIAZKAADRESOWA_H
 
 #include <iostream>
-#include "Uzytkownik.h"
 #include "UzytkownikMenedzer.h"
+#include "AdresatMenedzer.h"
 #include "MetodyPomocnicze.h"
 
 

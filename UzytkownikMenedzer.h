@@ -5,7 +5,6 @@
 #include <windows.h>
 #include <fstream>
 #include <sstream>
-//#include "AdresatMenedzer.h"
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
 #include "MetodyPomocnicze.h"
@@ -17,9 +16,8 @@ class UzytkownikMenedzer
     int idZalogowanegoUzytkownika;
     string nazwaPlikuZUzytkownikami;
     vector <Uzytkownik> uzytkownicy;
-
-
     PlikZUzytkownikami plikZUzytkownikami;
+
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
@@ -27,13 +25,11 @@ class UzytkownikMenedzer
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
-    UzytkownikMenedzer(int i = 0, string n = "");
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
-
 };
 
 #endif

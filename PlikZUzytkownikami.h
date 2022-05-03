@@ -12,7 +12,7 @@ using namespace std;
 
 class PlikZUzytkownikami
 {
-     string nazwaPlikuZUzytkownikami;
+     const string nazwaPlikuZUzytkownikami;
      bool czyPlikJestPusty();
      Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 

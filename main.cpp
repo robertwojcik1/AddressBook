@@ -1,16 +1,14 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
-#include "UzytkownikMenedzer.h"
+#include "AdresatMenedzer.h"
 
 using namespace std;
 
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    AdresatMenedzer adresatMenedzer;
     int idZalogowanegoUzytkownika = 0;
-    int idOstatniegoAdresata = 0;
-    int idUsunietegoAdresata = 0;
     char wybor;
 
     while (true)
@@ -37,15 +35,11 @@ int main()
                 break;
             }
         }
-    }
-      /*  }
         else
         {
-
-            if (adresaci.empty() == true)
-
-                idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-
+           // if (adresatMenedzer.pobierzAdresatow().empty() == true)
+              //  AdresatMenedzer::ustawIdOstatniegoAdresata( wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
+            /*
             wybor = wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
@@ -60,8 +54,8 @@ int main()
                 idZalogowanegoUzytkownika = 0;
                 adresaci.clear();
                 break;
-            }
+            } */
         }
-    } */
+    }
     return 0;
 }

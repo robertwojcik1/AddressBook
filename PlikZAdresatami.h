@@ -14,10 +14,11 @@ using namespace std;
 
 class PlikZAdresatami
 {
+    string nazwaPlikuZAdresatami;
 
 public:
-    //PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
-
+    PlikZAdresatami();  //(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
 };
 
 #endif
