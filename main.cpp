@@ -1,6 +1,7 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
 #include "AdresatMenedzer.h"
+#include "PlikZAdresatami.h"
 
 using namespace std;
 
@@ -8,6 +9,8 @@ int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
     AdresatMenedzer adresatMenedzer;
+    PlikZAdresatami plikZAdresatami;
+    vector <Adresat> adresaci;
     int idZalogowanegoUzytkownika = 0;
     char wybor;
 
@@ -37,11 +40,13 @@ int main()
         }
         else
         {
-           // if (adresatMenedzer.pobierzAdresatow().empty() == true)
-              //  AdresatMenedzer::ustawIdOstatniegoAdresata( wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-            /*
-            wybor = wybierzOpcjeZMenuUzytkownika();
+            if (adresatMenedzer.pobierzAdresatow().empty() == true)
+                {
+                adresatMenedzer.ustawIdOstatniegoAdresata( plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika) );
+                }
 
+            wybor = adresatMenedzer.wybierzOpcjeZMenuUzytkownika();
+/*
             switch (wybor)
             {
             case '1':

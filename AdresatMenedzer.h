@@ -19,13 +19,15 @@ class AdresatMenedzer
     int idOstatniegoAdresata;
     int idUsunietegoAdresata;
     vector <Adresat> adresaci;
-    PlikZAdresatami plikZAdresatami;
+    //PlikZAdresatami plikZAdresatami;
+
 
 public:
     AdresatMenedzer();    //(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     vector <Adresat> pobierzAdresatow();
-    int pobierzIdOStatniegoAdresata();
+    int pobierzIdOstatniegoAdresata();
     void ustawIdOstatniegoAdresata( int i);
+    char wybierzOpcjeZMenuUzytkownika();
 };
 
 #endif
