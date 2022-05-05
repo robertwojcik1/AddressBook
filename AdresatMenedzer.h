@@ -31,6 +31,7 @@ public:
     void ustawIdOstatniegoAdresata( int i);
     char wybierzOpcjeZMenuUzytkownika();
     int dodajAdresata(int idZalogowanegoUzytkownika);
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 };
 
 #endif

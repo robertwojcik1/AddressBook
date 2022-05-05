@@ -10,9 +10,7 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
     AdresatMenedzer adresatMenedzer;
     PlikZAdresatami plikZAdresatami;
-    vector <Adresat> adresaci;
     int idZalogowanegoUzytkownika = 0;
-    //int idOstatniegoAdresata = 0;
     char wybor;
 
     while (true)
@@ -43,7 +41,7 @@ int main()
         {
             if (adresatMenedzer.pobierzAdresatow().empty() == true)
                 {
-                adresatMenedzer.ustawIdOstatniegoAdresata( plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika) );
+                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika) );
                 }
 
             wybor = adresatMenedzer.wybierzOpcjeZMenuUzytkownika();
@@ -53,7 +51,7 @@ int main()
             case '1':
                 adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.dodajAdresata( idZalogowanegoUzytkownika ) );
                 break;
-         /*   case '4':
+          /*  case '4':
                 wyswietlWszystkichAdresatow(adresaci);
                 break;
             case '7':
