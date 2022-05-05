@@ -23,7 +23,7 @@ class PlikZAdresatami
     bool czyPlikJestPusty(fstream &plikTekstowy);
 
 public:
-    PlikZAdresatami();  //(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
+    PlikZAdresatami();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
     void dopiszAdresataDoPliku(Adresat adresat);
 };

@@ -2,6 +2,7 @@
 #include "KsiazkaAdresowa.h"
 #include "AdresatMenedzer.h"
 #include "PlikZAdresatami.h"
+#include "UzytkownikMenedzer.h"
 
 using namespace std;
 
@@ -54,13 +55,13 @@ int main()
             case '4':
                 adresatMenedzer.wyswietlWszystkichAdresatow();
                 break;
-          /*  case '7':
-                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+            case '7':
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
                 break;
             case '8':
                 idZalogowanegoUzytkownika = 0;
-                adresaci.clear();
-                break; */
+                adresatMenedzer.wyczyscVector();
+                break;
             }
         }
     }
