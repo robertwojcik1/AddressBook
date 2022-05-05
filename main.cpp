@@ -12,6 +12,7 @@ int main()
     PlikZAdresatami plikZAdresatami;
     vector <Adresat> adresaci;
     int idZalogowanegoUzytkownika = 0;
+    //int idOstatniegoAdresata = 0;
     char wybor;
 
     while (true)
@@ -46,20 +47,23 @@ int main()
                 }
 
             wybor = adresatMenedzer.wybierzOpcjeZMenuUzytkownika();
-/*
+
             switch (wybor)
             {
             case '1':
-                idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.dodajAdresata( idZalogowanegoUzytkownika ) );
                 break;
-            case '4':
+         /*   case '4':
                 wyswietlWszystkichAdresatow(adresaci);
+                break;
+            case '7':
+                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
             case '8':
                 idZalogowanegoUzytkownika = 0;
                 adresaci.clear();
-                break;
-            } */
+                break; */
+            }
         }
     }
     return 0;
