@@ -23,6 +23,7 @@ class AdresatMenedzer
 
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    void wyswietlDaneAdresata(Adresat adresat);
 
 public:
     AdresatMenedzer();    //(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
@@ -32,6 +33,7 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     int dodajAdresata(int idZalogowanegoUzytkownika);
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
 };
 
 #endif

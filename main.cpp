@@ -51,10 +51,10 @@ int main()
             case '1':
                 adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.dodajAdresata( idZalogowanegoUzytkownika ) );
                 break;
-          /*  case '4':
-                wyswietlWszystkichAdresatow(adresaci);
+            case '4':
+                adresatMenedzer.wyswietlWszystkichAdresatow();
                 break;
-            case '7':
+          /*  case '7':
                 zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
             case '8':
