@@ -54,7 +54,7 @@ int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    return ++idOstatniegoAdresata;
+    return idOstatniegoAdresata++;
 }
 
 Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
