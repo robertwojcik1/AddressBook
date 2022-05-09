@@ -22,6 +22,7 @@ public:
     char wybierzOpcjeZMenuGlownego();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika( int idZalogowanegoUzytkownika);
+    void zapiszWszystkichUzytkownikowDoPliku();
 };
 
 #endif

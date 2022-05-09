@@ -57,6 +57,7 @@ int main()
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zapiszWszystkichUzytkownikowDoPliku();
                 break;
             case '8':
                 idZalogowanegoUzytkownika = 0;

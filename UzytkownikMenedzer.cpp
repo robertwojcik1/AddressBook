@@ -120,7 +120,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
             system("pause");
         }
     }
-    zapiszWszystkichUzytkownikowDoPliku();
 }
 
 void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
@@ -129,9 +128,9 @@ void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
     string liniaZDanymiUzytkownika = "";
     vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
 
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
+    plikTekstowy.open(plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami().c_str(), ios::out);
 
-    if (plikTekstowy.good() == true)
+    if ( plikTekstowy.good() )
     {
         for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
         {

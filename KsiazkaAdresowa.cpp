@@ -37,3 +37,8 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika( int idZalogowanegoUzyt
 {
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
 }
+
+void KsiazkaAdresowa::zapiszWszystkichUzytkownikowDoPliku()
+{
+    uzytkownikMenedzer.zapiszWszystkichUzytkownikowDoPliku();
+}
