@@ -9,9 +9,6 @@ using namespace std;
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    AdresatMenedzer adresatMenedzer;
-    PlikZAdresatami plikZAdresatami;
-    //int idZalogowanegoUzytkownika = 0;
     char wybor;
 
     while (true)
@@ -40,20 +37,20 @@ int main()
         }
         else
         {
-            if ( adresatMenedzer.pobierzAdresatow().empty() )
+            if ( ksiazkaAdresowa.pobierzAdresatow().empty() )
                 {
-                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
+                ksiazkaAdresowa.ustawIdOstatniegoAdresata( ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
                 }
 
-            wybor = adresatMenedzer.wybierzOpcjeZMenuUzytkownika();
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
-                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.dodajAdresata( ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
+                ksiazkaAdresowa.ustawIdOstatniegoAdresata( ksiazkaAdresowa.dodajAdresata( ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
                 break;
             case '4':
-                adresatMenedzer.wyswietlWszystkichAdresatow();
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika( ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() );
@@ -61,7 +58,7 @@ int main()
                 break;
             case '8':
                 ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-                adresatMenedzer.wyczyscVector();
+                ksiazkaAdresowa.wyczyscVector();
                 break;
             }
         }

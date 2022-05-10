@@ -19,6 +19,7 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
 
     plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
 
+    cin.sync();
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
 }

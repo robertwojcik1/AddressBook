@@ -12,6 +12,7 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
+    AdresatMenedzer adresatMenedzer;
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami) {
@@ -25,6 +26,13 @@ public:
     void zapiszWszystkichUzytkownikowDoPliku();
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoUzytkownika);
+    vector <Adresat> pobierzAdresatow();
+    void ustawIdOstatniegoAdresata( int i);
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    char wybierzOpcjeZMenuUzytkownika();
+    int dodajAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
+    void wyczyscVector();
 };
 
 #endif

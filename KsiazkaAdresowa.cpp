@@ -52,3 +52,38 @@ void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoU
 {
     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(aktualnyIdZalogowanegoUzytkownika);
 }
+
+vector <Adresat> KsiazkaAdresowa::pobierzAdresatow()
+{
+    adresatMenedzer.pobierzAdresatow();
+}
+
+void KsiazkaAdresowa::ustawIdOstatniegoAdresata( int i )
+{
+    adresatMenedzer.ustawIdOstatniegoAdresata(i);
+}
+
+int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+{
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
+{
+    adresatMenedzer.wybierzOpcjeZMenuUzytkownika();
+}
+
+int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika)
+{
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::wyczyscVector()
+{
+    adresatMenedzer.wyczyscVector();
+}
