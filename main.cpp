@@ -11,12 +11,12 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
     AdresatMenedzer adresatMenedzer;
     PlikZAdresatami plikZAdresatami;
-    int idZalogowanegoUzytkownika = 0;
+    //int idZalogowanegoUzytkownika = 0;
     char wybor;
 
     while (true)
     {
-        if (idZalogowanegoUzytkownika == 0)
+        if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
@@ -26,7 +26,7 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
+                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika( ksiazkaAdresowa.logowanieUzytkownika() );
                 break;
             case '9':
                 cout << "Koniec programu." << endl;
@@ -40,9 +40,9 @@ int main()
         }
         else
         {
-            if (adresatMenedzer.pobierzAdresatow().empty() == true)
+            if ( adresatMenedzer.pobierzAdresatow().empty() )
                 {
-                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika) );
+                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
                 }
 
             wybor = adresatMenedzer.wybierzOpcjeZMenuUzytkownika();
@@ -50,17 +50,17 @@ int main()
             switch (wybor)
             {
             case '1':
-                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.dodajAdresata( idZalogowanegoUzytkownika ) );
+                adresatMenedzer.ustawIdOstatniegoAdresata( adresatMenedzer.dodajAdresata( ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
                 break;
             case '4':
                 adresatMenedzer.wyswietlWszystkichAdresatow();
                 break;
             case '7':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika( ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() );
                 ksiazkaAdresowa.zapiszWszystkichUzytkownikowDoPliku();
                 break;
             case '8':
-                idZalogowanegoUzytkownika = 0;
+                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
                 adresatMenedzer.wyczyscVector();
                 break;
             }

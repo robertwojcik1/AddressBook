@@ -42,3 +42,13 @@ void KsiazkaAdresowa::zapiszWszystkichUzytkownikowDoPliku()
 {
     uzytkownikMenedzer.zapiszWszystkichUzytkownikowDoPliku();
 }
+
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
+{
+    uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+}
+
+void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoUzytkownika)
+{
+    uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(aktualnyIdZalogowanegoUzytkownika);
+}

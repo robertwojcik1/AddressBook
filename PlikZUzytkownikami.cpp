@@ -11,7 +11,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
 
-        if ( czyPlikJestPusty( plikTekstowy ) )
+        if ( czyPlikJestPusty() )
         {
             plikTekstowy << liniaZDanymiUzytkownika << endl;
         }
@@ -25,13 +25,21 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     plikTekstowy.close();
 }
 
-bool PlikZUzytkownikami::czyPlikJestPusty(fstream &plikTekstowy)
+bool PlikZUzytkownikami::czyPlikJestPusty()
 {
+    fstream plikTekstowy;
+    plikTekstowy.open(nazwaPlikuZUzytkownikami, ios::in);
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
+    {
+        plikTekstowy.close();
         return true;
+    }
     else
+    {
+        plikTekstowy.close();
         return false;
+    }
 }
 
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)

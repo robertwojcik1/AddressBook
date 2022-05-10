@@ -13,8 +13,7 @@ using namespace std;
 class PlikZUzytkownikami
 {
      const string nazwaPlikuZUzytkownikami;
-     fstream plikTekstowy;
-     bool czyPlikJestPusty(fstream &plikTekstowy);
+     bool czyPlikJestPusty();
      Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
  public:
