@@ -1,6 +1,5 @@
 #include "PlikZUzytkownikami.h"
 
-
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
     fstream plikTekstowy;

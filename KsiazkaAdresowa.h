@@ -6,7 +6,6 @@
 #include "AdresatMenedzer.h"
 #include "MetodyPomocnicze.h"
 
-
 using namespace std;
 
 class KsiazkaAdresowa

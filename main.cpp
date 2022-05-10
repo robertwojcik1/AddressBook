@@ -1,8 +1,5 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
-#include "AdresatMenedzer.h"
-#include "PlikZAdresatami.h"
-#include "UzytkownikMenedzer.h"
 
 using namespace std;
 
@@ -24,6 +21,7 @@ int main()
                 break;
             case '2':
                 ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika( ksiazkaAdresowa.logowanieUzytkownika() );
+                ksiazkaAdresowa.ustawIdOstatniegoAdresata( ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
                 break;
             case '9':
                 cout << "Koniec programu." << endl;
@@ -37,11 +35,6 @@ int main()
         }
         else
         {
-            if ( ksiazkaAdresowa.pobierzAdresatow().empty() )
-                {
-                ksiazkaAdresowa.ustawIdOstatniegoAdresata( ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
-                }
-
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
