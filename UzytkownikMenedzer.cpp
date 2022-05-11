@@ -76,11 +76,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -161,7 +156,7 @@ void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
     }
     else
     {
-        cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;
+        cout << "Nie mozna otworzyc pliku " << plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami() << endl;
     }
     plikTekstowy.close();
 }
