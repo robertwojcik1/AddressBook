@@ -76,7 +76,7 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-int UzytkownikMenedzer::logowanieUzytkownika()
+void UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
@@ -98,21 +98,22 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzId();
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
 
-void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
@@ -159,5 +160,18 @@ void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
         cout << "Nie mozna otworzyc pliku " << plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami() << endl;
     }
     plikTekstowy.close();
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if( idZalogowanegoUzytkownika > 0 )
+        return true;
+    else
+        return false;
+}
+
+void UzytkownikMenedzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
 }
 

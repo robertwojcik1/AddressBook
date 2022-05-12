@@ -4,102 +4,122 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>20</y>
+      <x>0</x>
+      <y>0</y>
       <w>350</w>
-      <h>110</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 -
 - UzytkownikMenedzer : uzytkownikMenedzer
+- AdresatMenedzer: *adresatMenedzer
+- NAZWA_PLIKU_Z_ADRESATAMI: String
 --
 + KsiazkaAdresowa()
-+ rejestracjaUzytkownika(): void
-- wybierzOpcjeZMenuGlownego(): char</panel_attributes>
++ ~KsiazkaAdresowa()
++ wybierzOpcjeZMenuGlownego(): char
++ zakonczProgram(): void
++ niepoprawnyWyborOpcjiZMenu(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>180</y>
+      <x>0</x>
+      <y>200</y>
       <w>180</w>
-      <h>210</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>Uzytkownik
 --
 - id: Integer
 - login: String
-- haslo: String</panel_attributes>
+- haslo: String
+--
++ Uzytkownik()
++ ustawId(): void
++ ustawLogin(): void
++ ustawHaslo(): void
++ pobierzId(): Integer
++ pobierzLogin(): String
++ pobierzHaslo(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>180</y>
+      <x>200</x>
+      <y>200</y>
       <w>550</w>
-      <h>210</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>UzytkownikMenedzer
 --
 - idZalogowanegoUzytkownika : Integer
 - uzytkownicy : vector&lt;Uzytkownik&gt;
+- plikZUzytkownikami: PlikZUzytkownikami
 --
+UzytkownikMenedzer()
++ pobierzIdZalogowanegoUzytkownika(): Integer
++ ustawIdZalogowanegoUzytkownika(): void
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): Integer
 + wypiszWszystkichUzytkownikow(): void
-+ wczytajUzytkownikowZPliku(): void
 + zmianaHaslaZalogowanegoUzytkownika(): void
-- podajDaneNowegoUzytkownika(): Uzytkownik
-- pobierzIdNowegoUzytkownika(): Integer
-- czyIstniejeLogin(string login): bool
-- zapiszWszystkichUzytkownikowDoPliku(): void
++ zapiszWszystkichUzytkownikowDoPliku(): void
++ czyUzytkownikJestZalogowany(): bool
++ wylogowanieUzytkownika(): void
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
-      <y>180</y>
+      <x>770</x>
+      <y>200</y>
       <w>590</w>
-      <h>210</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
-- nazwaPlikuZUzytkownikami: String
+- NAZWA_PLIKU_Z_UZYTKOWNIKAMI: String
 --
 + PlikZUzytkownikami()
+- czyPlikJestPusty(): bool
+- pobierzDaneUzytkownika(): Uzytkownik
 + dopiszUzytkownikaDoPliku(): void
 + wczytajUzytkownikowZPliku(): vector
-- czyPlikJestPusty(): bool
-- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): String</panel_attributes>
++ zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): String
++ pobierzNazwePlikuZUzytkownikami(): String
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1150</x>
-      <y>20</y>
+      <x>1130</x>
+      <y>0</y>
       <w>390</w>
-      <h>110</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
 + konwerjsaIntNaString(): String
 + konwersjaStringNaInt(): Integer
 + wczytajLinie(): String
-+ wczytajZnak(): char</panel_attributes>
++ wczytajZnak(): char
++ wczytajLiczbeCalkowita(): int
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>510</y>
-      <w>180</w>
-      <h>190</h>
+      <x>0</x>
+      <y>480</y>
+      <w>240</w>
+      <h>390</h>
     </coordinates>
     <panel_attributes>Adresat
 --
@@ -110,53 +130,76 @@
 - numerTelefonu: String
 - email: String
 - adres: String
+--
++ Adresat()
++ ustawId(): void
++ ustawIdUzytkownika(): void
++ ustawImie(): void
++ ustawNazwisko(): void
++ ustawNumerTelefonu(): void
++ ustawEmail(): void
++ ustawAdres(): void
++ pobierzId(): Integer
++ pobierzIdUzytkownika(): Integer
++ pobierzImie(): String
++ pobierzNazwisko(): String
++ pobierzNumerTelefonu(): String
++ pobierzEmail(): String
++ pobierzAdres(): String
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>510</y>
-      <w>550</w>
-      <h>250</h>
+      <x>250</x>
+      <y>480</y>
+      <w>500</w>
+      <h>390</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
+- ID_ZALOGOWANEGO_UZYTKOWNIKA: Integer
 - adresaci: vector&lt;Adresat&gt;
-- idOstatniegoAdresata: Integer
-- idUsunietegoAdresata: Integer
+- plikZAdresatami: PlikZAdresatami
 --
-+ wyswietlWszystkichAdresatow(): void
-+ dodajAdresata(): Integer
-+ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): void
-+ wybierzOpcjeZMenuUzytkownika():char
-- wyswietlDaneAdresata(): void
++ AdresatMenedzer()
 - podajDaneNowegoAdresata(): Adresat
-- zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String
+- wyswietlDaneAdresata(): void
++ pobierzAdresatow(): vector &lt;Adresat&gt;
++ wybierzOpcjeZMenuUzytkownika():char
++ dodajAdresata(): Integer
++ wyswietlWszystkichAdresatow(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
-      <y>510</y>
+      <x>770</x>
+      <y>480</y>
       <w>590</w>
-      <h>190</h>
+      <h>390</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- nazwaPlikuZAdresatami: String
+- NAZWA_PLIKU_Z_ADRESATAMI: String
+- idOstatniegoAdresata: Integer
+- idUsunietegoAdresata: Integer
 --
-+ wczytajAdresatowZalogowanegoUzytkownikaZPliku():vector
-+ dopiszAdresataDoPliku(): void
++ PlikZAdresatami()
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): Integer
 - pobierzDaneAdresata(): Adresat
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
 - pobierzLiczbe(): String
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
-- czyPlikJestPusty(): bool</panel_attributes>
+- czyPlikJestPusty(): bool
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku():vector
++ dopiszAdresataDoPliku(): bool
++ pobierzIdOstatniegoAdresata(): Integer
++ ustawIdOstatniegoAdresata(): void
+
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

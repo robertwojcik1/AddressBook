@@ -5,12 +5,12 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
 
     while (true)
     {
-        if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0)
+        if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany() )
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
@@ -20,16 +20,13 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika( ksiazkaAdresowa.logowanieUzytkownika() );
-                ksiazkaAdresowa.ustawIdOstatniegoAdresata( ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
+                ksiazkaAdresowa.logowanieUzytkownika();
                 break;
             case '9':
-                cout << "Koniec programu." << endl;
-                exit(0);
+                ksiazkaAdresowa.zakonczProgram();
                 break;
             default:
-                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
-                system("pause");
+                ksiazkaAdresowa.niepoprawnyWyborOpcjiZMenu();
                 break;
             }
         }
@@ -40,18 +37,19 @@ int main()
             switch (wybor)
             {
             case '1':
-                ksiazkaAdresowa.ustawIdOstatniegoAdresata( ksiazkaAdresowa.dodajAdresata( ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() ) );
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '7':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika( ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() );
-                ksiazkaAdresowa.zapiszWszystkichUzytkownikowDoPliku();
+                ksiazkaAdresowa.zmianaHasla();
                 break;
             case '8':
-                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-                ksiazkaAdresowa.wyczyscVector();
+                ksiazkaAdresowa.wylogowanieUzytkownika();
+                break;
+            default:
+                ksiazkaAdresowa.niepoprawnyWyborOpcjiZMenu();
                 break;
             }
         }
