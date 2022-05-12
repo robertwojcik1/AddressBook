@@ -112,3 +112,8 @@ void KsiazkaAdresowa::niepoprawnyWyborOpcjiZMenu()
    cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
    system("pause");
 }
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatMenedzer->wyszukajAdresatowPoImieniu();
+}

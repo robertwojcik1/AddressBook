@@ -44,6 +44,7 @@ public:
     void zmianaHasla();
     void zakonczProgram();
     void niepoprawnyWyborOpcjiZMenu();
+    void wyszukajAdresatowPoImieniu();
 };
 
 #endif
