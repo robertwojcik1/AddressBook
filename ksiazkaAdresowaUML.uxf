@@ -172,6 +172,7 @@ UzytkownikMenedzer()
 + wyswietlWszystkichAdresatow(): void
 + wyszukajAdresatowPoImieniu(): void
 + wyswietlIloscWyszukanychAdresatow(): void
++ wyszukajAdresatowPoNazwisku(): void
 </panel_attributes>
     <additional_attributes/>
   </element>

@@ -45,6 +45,7 @@ public:
     void zakonczProgram();
     void niepoprawnyWyborOpcjiZMenu();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif

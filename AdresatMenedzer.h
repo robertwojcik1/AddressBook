@@ -37,6 +37,7 @@ public:
     void ustawIdOstatniegoAdresata(int nowyIdOstatniegoAdresata );
     void wyszukajAdresatowPoImieniu();
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif
