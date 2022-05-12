@@ -23,7 +23,7 @@ class AdresatMenedzer
     void wyswietlDaneAdresata(Adresat adresat);
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
-    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
     int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 

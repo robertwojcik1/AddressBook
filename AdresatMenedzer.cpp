@@ -218,28 +218,28 @@ void AdresatMenedzer::edytujAdresata()
                 cout << "Podaj nowe imie: ";
                 adresaci[i].ustawImie( MetodyPomocnicze::wczytajLinie() );
                 adresaci[i].ustawImie( MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresaci[i].pobierzImie()) );
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '2':
                 cout << "Podaj nowe nazwisko: ";
                 adresaci[i].ustawNazwisko( MetodyPomocnicze::wczytajLinie() );
                 adresaci[i].ustawNazwisko( MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresaci[i].pobierzNazwisko() ) );
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '3':
                 cout << "Podaj nowy numer telefonu: ";
                 adresaci[i].ustawNumerTelefonu( MetodyPomocnicze::wczytajLinie() );
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '4':
                 cout << "Podaj nowy email: ";
                 adresaci[i].ustawEmail( MetodyPomocnicze::wczytajLinie() );
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '5':
                 cout << "Podaj nowy adres zamieszkania: ";
                 adresaci[i].ustawAdres( MetodyPomocnicze::wczytajLinie() );
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '6':
                 cout << endl << "Powrot do menu uzytkownika" << endl << endl;
@@ -284,12 +284,12 @@ char AdresatMenedzer::wybierzOpcjeZMenuEdycja()
     return wybor;
 }
 
-void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata)
+void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
     int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
-    numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idEdytowanegoAdresata);
+    numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata( adresat.pobierzId() );
     liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
     plikZAdresatami.edytujWybranaLinieWPliku(numerLiniiEdytowanegoAdresata, liniaZDanymiAdresata);
 
