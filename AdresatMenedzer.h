@@ -35,6 +35,9 @@ public:
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wyswietlWszystkichAdresatow();
     void ustawIdOstatniegoAdresata(int nowyIdOstatniegoAdresata );
+    void wyszukajAdresatowPoImieniu();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif

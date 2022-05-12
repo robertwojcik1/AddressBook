@@ -39,6 +39,12 @@ int main()
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
                 break;
+            case '2':
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+                break;
+            case '3':
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
