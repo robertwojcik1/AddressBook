@@ -33,7 +33,6 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika( int idZalogowanegoUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoUzytkownika);
-   // vector <Adresat> pobierzAdresatow();
     void ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     char wybierzOpcjeZMenuUzytkownika();

@@ -1,11 +1,5 @@
 #include "AdresatMenedzer.h"
 
-
-/*vector <Adresat> AdresatMenedzer::pobierzAdresatow()
-{
-    return adresaci;
-} */
-
 char AdresatMenedzer::wybierzOpcjeZMenuUzytkownika()
 {
     char wybor;

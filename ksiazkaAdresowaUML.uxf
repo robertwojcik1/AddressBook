@@ -166,7 +166,6 @@ UzytkownikMenedzer()
 + AdresatMenedzer()
 - podajDaneNowegoAdresata(): Adresat
 - wyswietlDaneAdresata(): void
-+ pobierzAdresatow(): vector &lt;Adresat&gt;
 + wybierzOpcjeZMenuUzytkownika():char
 + dodajAdresata(): Integer
 + wyswietlWszystkichAdresatow(): void

@@ -52,11 +52,6 @@ void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoU
     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(aktualnyIdZalogowanegoUzytkownika);
 }
 
-/*vector <Adresat> KsiazkaAdresowa::pobierzAdresatow()
-{
-    adresatMenedzer->pobierzAdresatow();
-} */
-
 void KsiazkaAdresowa::ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata )
 {
     adresatMenedzer->ustawIdOstatniegoAdresata(nowyIdOstatniegoAdresata);
