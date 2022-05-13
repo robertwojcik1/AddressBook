@@ -52,10 +52,10 @@ void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoU
     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(aktualnyIdZalogowanegoUzytkownika);
 }
 
-vector <Adresat> KsiazkaAdresowa::pobierzAdresatow()
+/*vector <Adresat> KsiazkaAdresowa::pobierzAdresatow()
 {
     adresatMenedzer->pobierzAdresatow();
-}
+} */
 
 void KsiazkaAdresowa::ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata )
 {
@@ -121,4 +121,14 @@ void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
 void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
 {
     adresatMenedzer->wyszukajAdresatowPoNazwisku();
+}
+
+void KsiazkaAdresowa::edytujAdresata()
+{
+    adresatMenedzer->edytujAdresata();
+}
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenedzer->usunAdresata();
 }
