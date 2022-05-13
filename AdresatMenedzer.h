@@ -34,7 +34,7 @@ public:
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku( adresaci, ID_ZALOGOWANEGO_UZYTKOWNIKA );
     };
 
-    vector <Adresat> pobierzAdresatow();
+    //vector <Adresat> pobierzAdresatow();
     char wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
@@ -44,6 +44,7 @@ public:
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     void wyszukajAdresatowPoNazwisku();
     void edytujAdresata();
+    void usunAdresata();
 };
 
 #endif

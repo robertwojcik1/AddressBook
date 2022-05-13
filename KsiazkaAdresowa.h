@@ -33,7 +33,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika( int idZalogowanegoUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoUzytkownika);
-    vector <Adresat> pobierzAdresatow();
+   // vector <Adresat> pobierzAdresatow();
     void ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     char wybierzOpcjeZMenuUzytkownika();
@@ -47,6 +47,7 @@ public:
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     void edytujAdresata();
+    void usunAdresata();
 };
 
 #endif
