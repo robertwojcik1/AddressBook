@@ -173,11 +173,13 @@ void PlikZAdresatami::ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata)
     idOstatniegoAdresata = nowyIdOstatniegoAdresata;
 }
 
-void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami)
+void PlikZAdresatami::edytujAdresataWPliku(int idEdytowanegoAdresata, string liniaZDanymiAdresataOddzielonePionowymiKreskami)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
+    string wczytanyIdAdresata = "";
+    int wczytanyIdAdresataInt = 0;
 
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
@@ -186,7 +188,15 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string 
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            if (numerWczytanejLinii == numerEdytowanejLinii)
+            for ( int i = 0; i < wczytanaLinia.length(); i++)
+            {
+                if ( wczytanaLinia[i] == '|')
+                break;
+                wczytanyIdAdresata += wczytanaLinia[i];
+            }
+                wczytanyIdAdresataInt = MetodyPomocnicze::konwersjaStringNaInt(wczytanyIdAdresata);
+
+            if (wczytanyIdAdresataInt == idEdytowanegoAdresata)
             {
                 if (numerWczytanejLinii == 1)
                     tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
@@ -201,6 +211,7 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string 
                     tymczasowyPlikTekstowy << endl << wczytanaLinia;
             }
             numerWczytanejLinii++;
+            wczytanyIdAdresata = "";
         }
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();

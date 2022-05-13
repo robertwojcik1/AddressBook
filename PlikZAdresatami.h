@@ -39,7 +39,7 @@ public:
     int pobierzIdOstatniegoAdresata();
     void ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata );
     string pobierzNazwePlikuZAdresatami();
-    void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
+    void edytujAdresataWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
     void usunWybranaLinieWPliku(int numerUsuwanejLinii);

@@ -188,10 +188,7 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
 void AdresatMenedzer::edytujAdresata()
 {
     system("cls");
-    Adresat adresat;
     int idEdytowanegoAdresata = 0;
-    int numerLiniiEdytowanegoAdresata = 0;
-    string liniaZDanymiAdresata = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
     idEdytowanegoAdresata = podajIdWybranegoAdresata();
@@ -280,12 +277,11 @@ char AdresatMenedzer::wybierzOpcjeZMenuEdycja()
 
 void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
-    int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
+    int idEdytowanegoAdresata = adresat.pobierzId();
 
-    numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata( adresat.pobierzId() );
     liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-    plikZAdresatami.edytujWybranaLinieWPliku(numerLiniiEdytowanegoAdresata, liniaZDanymiAdresata);
+    plikZAdresatami.edytujAdresataWPliku(idEdytowanegoAdresata, liniaZDanymiAdresata);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
