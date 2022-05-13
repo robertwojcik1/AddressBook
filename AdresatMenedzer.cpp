@@ -286,36 +286,6 @@ void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
 
-int AdresatMenedzer::zwrocNumerLiniiSzukanegoAdresata(int idAdresata)
-{
-    bool czyIstniejeAdresat = false;
-    int numerLiniiWPlikuTekstowym = 1;
-    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(plikZAdresatami.pobierzNazwePlikuZAdresatami().c_str(), ios::in);
-
-    if (plikTekstowy.good() == true && idAdresata != 0)
-    {
-        while(getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
-        {
-            if(idAdresata == plikZAdresatami.pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
-            {
-                czyIstniejeAdresat = true;
-                plikTekstowy.close();
-                return numerLiniiWPlikuTekstowym;
-            }
-            else
-                numerLiniiWPlikuTekstowym++;
-        }
-        if (czyIstniejeAdresat = false)
-        {
-            plikTekstowy.close();
-            return 0;
-        }
-    }
-    return 0;
-}
-
 string AdresatMenedzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
@@ -334,7 +304,6 @@ string AdresatMenedzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
 void AdresatMenedzer::usunAdresata()
 {
     int idUsuwanegoAdresata = 0;
-    int numerLiniiUsuwanegoAdresata = 0;
 
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -352,12 +321,11 @@ void AdresatMenedzer::usunAdresata()
             znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't')
             {
-                numerLiniiUsuwanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
-                plikZAdresatami.usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
+                plikZAdresatami.usunAdresataWPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
-                return; //idUsuwanegoAdresata;
+                return;
             }
             else
             {

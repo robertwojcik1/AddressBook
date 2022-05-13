@@ -42,7 +42,7 @@ public:
     void edytujAdresataWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
-    void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+    void usunAdresataWPliku(int idUsuwanegoAdresata);
 };
 
 #endif

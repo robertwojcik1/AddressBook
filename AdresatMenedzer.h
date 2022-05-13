@@ -24,7 +24,6 @@ class AdresatMenedzer
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);
-    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
 public:

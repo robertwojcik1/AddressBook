@@ -272,29 +272,40 @@ int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
     return idOstatniegoAdresata;
 }
 
-void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii)
+void PlikZAdresatami::usunAdresataWPliku(int idUsuwanegoAdresata)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
+    string wczytanyIdAdresata = "";
+    int wczytanyIdAdresataInt = 0;
 
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
 
-    if (odczytywanyPlikTekstowy.good() == true && numerUsuwanejLinii != 0)
+    if (odczytywanyPlikTekstowy.good() == true && idUsuwanegoAdresata != 0)
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            if (numerWczytanejLinii == numerUsuwanejLinii) {}
-            else if (numerWczytanejLinii == 1 && numerWczytanejLinii != numerUsuwanejLinii)
+            for ( int i = 0; i < wczytanaLinia.length(); i++)
+            {
+                if ( wczytanaLinia[i] == '|')
+                break;
+                wczytanyIdAdresata += wczytanaLinia[i];
+            }
+                wczytanyIdAdresataInt = MetodyPomocnicze::konwersjaStringNaInt(wczytanyIdAdresata);
+
+            if (wczytanyIdAdresataInt == idUsuwanegoAdresata) {}
+            else if (numerWczytanejLinii == 1 && numerWczytanejLinii != idUsuwanegoAdresata)
                 tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii == 2 && numerUsuwanejLinii == 1)
+            else if (numerWczytanejLinii == 2 && idUsuwanegoAdresata == 1)
                 tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii > 2 && numerUsuwanejLinii == 1)
+            else if (numerWczytanejLinii > 2 && idUsuwanegoAdresata == 1)
                 tymczasowyPlikTekstowy << endl << wczytanaLinia;
-            else if (numerWczytanejLinii > 1 && numerUsuwanejLinii != 1)
+            else if (numerWczytanejLinii > 1 && idUsuwanegoAdresata != 1)
                 tymczasowyPlikTekstowy << endl << wczytanaLinia;
             numerWczytanejLinii++;
+            wczytanyIdAdresata = "";
         }
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();
