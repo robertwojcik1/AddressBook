@@ -223,7 +223,7 @@ void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
         cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
 }
 
-int PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata)
+int PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata )
 {
     if (idUsuwanegoAdresata == idOstatniegoAdresata)
         return pobierzZPlikuIdOstatniegoAdresata();
@@ -273,10 +273,10 @@ void PlikZAdresatami::usunAdresataWPliku(int idUsuwanegoAdresata)
             for ( int i = 0; i < wczytanaLinia.length(); i++)
             {
                 if ( wczytanaLinia[i] == '|')
-                break;
+                    break;
                 wczytanyIdAdresata += wczytanaLinia[i];
             }
-                wczytanyIdAdresataInt = MetodyPomocnicze::konwersjaStringNaInt(wczytanyIdAdresata);
+            wczytanyIdAdresataInt = MetodyPomocnicze::konwersjaStringNaInt(wczytanyIdAdresata);
 
             if (wczytanyIdAdresataInt == idUsuwanegoAdresata) {}
             else if (numerWczytanejLinii == 1 && numerWczytanejLinii != idUsuwanegoAdresata)
@@ -295,6 +295,8 @@ void PlikZAdresatami::usunAdresataWPliku(int idUsuwanegoAdresata)
 
         usunPlik( PlikTekstowy::pobierzNazwePliku() );
         zmienNazwePliku( nazwaTymczasowegoPlikuZAdresatami, PlikTekstowy::pobierzNazwePliku() );
+
+        idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata( idUsuwanegoAdresata );
     }
 }
 
