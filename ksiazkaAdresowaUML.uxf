@@ -15,9 +15,10 @@
 - AdresatMenedzer: *adresatMenedzer
 - NAZWA_PLIKU_Z_ADRESATAMI: String
 --
-+ KsiazkaAdresowa()
-+ ~KsiazkaAdresowa()
++ KsiazkaAdresowa():
++ ~KsiazkaAdresowa():
 + wybierzOpcjeZMenuGlownego(): char
++ logowanieUzytkownika(): void
 + zakonczProgram(): void
 + niepoprawnyWyborOpcjiZMenu(): void</panel_attributes>
     <additional_attributes/>
@@ -51,7 +52,7 @@
       <x>200</x>
       <y>200</y>
       <w>550</w>
-      <h>260</h>
+      <h>340</h>
     </coordinates>
     <panel_attributes>UzytkownikMenedzer
 --
@@ -59,7 +60,10 @@
 - uzytkownicy : vector&lt;Uzytkownik&gt;
 - plikZUzytkownikami: PlikZUzytkownikami
 --
-UzytkownikMenedzer()
+- podajDaneNowegoUzytkownika(): Uzytkownik
+-  pobierzIdNowegoUzytkownika(): Integer
+- czyIstniejeLogin(): bool
+UzytkownikMenedzer():
 + pobierzIdZalogowanegoUzytkownika(): Integer
 + ustawIdZalogowanegoUzytkownika(): void
 + rejestracjaUzytkownika(): void
@@ -83,15 +87,12 @@ UzytkownikMenedzer()
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
-- NAZWA_PLIKU_Z_UZYTKOWNIKAMI: String
---
-+ PlikZUzytkownikami()
-- czyPlikJestPusty(): bool
 - pobierzDaneUzytkownika(): Uzytkownik
++ PlikZUzytkownikami():
 + dopiszUzytkownikaDoPliku(): void
-+ wczytajUzytkownikowZPliku(): vector
++ wczytajUzytkownikowZPliku(): vector&lt;Uzytkownik&gt;
 + zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): String
-+ pobierzNazwePlikuZUzytkownikami(): String
+
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -105,7 +106,7 @@ UzytkownikMenedzer()
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
-+ konwerjsaIntNaString(): String
++ konwersjaIntNaString(): String
 + konwersjaStringNaInt(): Integer
 + wczytajLinie(): String
 + wczytajZnak(): char
@@ -117,7 +118,7 @@ UzytkownikMenedzer()
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>480</y>
+      <y>550</y>
       <w>240</w>
       <h>390</h>
     </coordinates>
@@ -131,7 +132,7 @@ UzytkownikMenedzer()
 - email: String
 - adres: String
 --
-+ Adresat()
++ Adresat():
 + ustawId(): void
 + ustawIdUzytkownika(): void
 + ustawImie(): void
@@ -153,7 +154,7 @@ UzytkownikMenedzer()
     <id>UMLClass</id>
     <coordinates>
       <x>250</x>
-      <y>480</y>
+      <y>550</y>
       <w>500</w>
       <h>390</h>
     </coordinates>
@@ -163,15 +164,21 @@ UzytkownikMenedzer()
 - adresaci: vector&lt;Adresat&gt;
 - plikZAdresatami: PlikZAdresatami
 --
-+ AdresatMenedzer()
 - podajDaneNowegoAdresata(): Adresat
 - wyswietlDaneAdresata(): void
+- podajIdWybranegoAdresata(): Integer
+- wybierzOpcjeZMenuEdycja(): char
+- zaktualizujDaneWybranegoAdresata(): void
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
++ AdresatMenedzer()
 + wybierzOpcjeZMenuUzytkownika():char
 + dodajAdresata(): Integer
 + wyswietlWszystkichAdresatow(): void
 + wyszukajAdresatowPoImieniu(): void
 + wyswietlIloscWyszukanychAdresatow(): void
 + wyszukajAdresatowPoNazwisku(): void
++ edytujAdresata(): void
++ usunAdresata(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -181,26 +188,49 @@ UzytkownikMenedzer()
       <x>770</x>
       <y>480</y>
       <w>590</w>
-      <h>390</h>
+      <h>380</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- NAZWA_PLIKU_Z_ADRESATAMI: String
+- nazwaTymczasowegoPlikuZAdresatami: String
 - idOstatniegoAdresata: Integer
 - idUsunietegoAdresata: Integer
 --
-+ PlikZAdresatami()
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): Integer
 - pobierzDaneAdresata(): Adresat
-- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
 - pobierzLiczbe(): String
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
-- czyPlikJestPusty(): bool
+- usunPlik(): void
+- zmienNazwePliku(): void
+- pobierzZPlikuIdOstatniegoAdresata(): Integer
++ PlikZAdresatami():
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku():vector
 + dopiszAdresataDoPliku(): bool
 + pobierzIdOstatniegoAdresata(): Integer
 + ustawIdOstatniegoAdresata(): void
++ edytujAdresataWPliku(): void
++ pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
++ podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(): Integer
++ usunAdresataWPliku(): void
 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1370</x>
+      <y>200</y>
+      <w>200</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+--
+- NAZWA_PLIKU: String
+--
++ PlikTekstowy():
++ pobierzNazwePliku(): String
++ czyPlikJestPusty(): bool
 </panel_attributes>
     <additional_attributes/>
   </element>

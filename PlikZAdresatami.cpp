@@ -9,7 +9,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     fstream plikTekstowy;
     plikTekstowy.open(PlikTekstowy::pobierzNazwePliku().c_str(), ios::in);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
@@ -98,7 +98,7 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
 string PlikZAdresatami::pobierzLiczbe(string tekst, int pozycjaZnaku)
 {
     string liczba = "";
-    while(isdigit(tekst[pozycjaZnaku]) == true)
+    while(isdigit(tekst[pozycjaZnaku]))
     {
         liczba += tekst[pozycjaZnaku];
         pozycjaZnaku ++;
@@ -112,11 +112,11 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     fstream plikTekstowy;
     plikTekstowy.open(PlikTekstowy::pobierzNazwePliku().c_str(), ios::out | ios::app);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
-        if (PlikTekstowy::czyPlikJestPusty() == true)
+        if (PlikTekstowy::czyPlikJestPusty())
         {
             plikTekstowy << liniaZDanymiAdresata;
         }
@@ -153,6 +153,7 @@ int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 
 void PlikZAdresatami::ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata)
 {
+    if(nowyIdOstatniegoAdresata > 0)
     idOstatniegoAdresata = nowyIdOstatniegoAdresata;
 }
 
@@ -167,7 +168,7 @@ void PlikZAdresatami::edytujAdresataWPliku(int idEdytowanegoAdresata, string lin
     odczytywanyPlikTekstowy.open(PlikTekstowy::pobierzNazwePliku().c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
 
-    if (odczytywanyPlikTekstowy.good() == true)
+    if (odczytywanyPlikTekstowy.good())
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
@@ -239,7 +240,7 @@ int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
     fstream plikTekstowy;
     plikTekstowy.open(PlikTekstowy::pobierzNazwePliku().c_str(), ios::in);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {}
             daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
@@ -266,7 +267,7 @@ void PlikZAdresatami::usunAdresataWPliku(int idUsuwanegoAdresata)
     odczytywanyPlikTekstowy.open(PlikTekstowy::pobierzNazwePliku().c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
 
-    if (odczytywanyPlikTekstowy.good() == true && idUsuwanegoAdresata != 0)
+    if (odczytywanyPlikTekstowy.good() && idUsuwanegoAdresata != 0)
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {

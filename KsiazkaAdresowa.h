@@ -30,7 +30,6 @@ public:
     void wypiszWszystkichUzytkownikow();
     char wybierzOpcjeZMenuGlownego();
     void logowanieUzytkownika();
-    void zmianaHaslaZalogowanegoUzytkownika( int idZalogowanegoUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int aktualnyIdZalogowanegoUzytkownika);
     void ustawIdOstatniegoAdresata( int nowyIdOstatniegoAdresata);
